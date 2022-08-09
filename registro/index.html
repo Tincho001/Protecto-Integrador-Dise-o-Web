@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTRO</title>
+    <link rel="icon" href="/imagen/NUE/miicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
@@ -22,44 +23,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-   
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
-    <header id="container-header">
-        <img src="/imagen/NUE/milog.png" alt="" class="logo">
-        <nav>
-            <label for="change">
-                <i class="fas fa-bars icon-menu"></i>
-            </label>
-
-            <input type="checkbox" class="change" name="change" id="change">
-
-            <ul>
-                <li>
-                    <a class="men1" href="">HOME</a>
-                </li>
-                <li>
-                    <a class="men1" href="https://integrador-beige.vercel.app/">SERVICIOS</a>
-                </li>
-                <li>
-                    <a class="men1" href="https://integrador-beige.vercel.app/">PROYECTOS</a>
-                </li>
-                <li>
-                    <a class="men1" href="https://integrador-beige.vercel.app/">NOSOTROS</a>
-                </li>
-                <li>
-                    <a class="men1" href="https://integrador-beige.vercel.app/">CONTACTO</a>
-                </li>
-                <li>
-                    <a class="men1" href="https://registrarse-kohl.vercel.app/">REGISTRARSE</a>
-                </li>
-                <li>
-                    <a class="men1" href="https://loginint.vercel.app/">LOGIN</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <header x-data="{ open: false }" class="header">
+    <!-- Logo -->
+    <div class="header__logo">
+      <img src="/imagen/NUE/milog.png" alt="">
+    </div>
+    <!-- Boton abrir -->
+   
+    <button type="button" class="btn btn-dark header__button-nav--open "x-on:click="open = true" >☰</button>
+    <!-- Navegador -->
+    <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
+      <!-- Boton cerrar -->
+      <div class="nav__button" x-on:click="open = false">
+        <button class="btn btn-dark header__button-nav--close">X</button>
+        
+      </div>
+      <!-- Menu -->
+      <ul class="nav__ul">
+        <li class="nav__item"><a href="#container-portada" class="nav__link">HOME</a></li>
+        <li class="nav__item"><a href="#container-section1" class="nav__link">SERVICIOS</a></li>
+        <li class="nav__item"><a href="#container-section2" class="nav__link">PROYECTOS</a></li>
+        <li class="nav__item"><a href="#container-section3" class="nav__link">NOSOTROS</a></li>
+        <li class="nav__item"><a href="#section-contacto" class="nav__link">CONTACTO</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">REGISTRARSE</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">LOGIN</a></li>
+      </ul>
+    </nav>
+    <!-- Fin Navegador -->
+  </header>
     <main>
 
 

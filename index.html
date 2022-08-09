@@ -23,48 +23,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-   
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
-    <header id="container-header">
-        <img src="/imagen/NUE/milog.png" alt="" class="logo">
-        <nav>
-            <label for="change">
-                <i class="fas fa-bars icon-menu"></i>
-            </label>
-
-            <input type="checkbox" class="change" name="change" id="change">
-
-            <ul>
-                <li>
-                    <a class="men1" href="">HOME</a>
-                </li>
-                <li>
-                    <a class="men1" href="#container-section1">SERVICIOS</a>
-                </li>
-                <li>
-                    <a class="men1" href="#container-section2">PROYECTOS</a>
-                </li>
-                <li>
-                    <a class="men1" href="#container-section3">NOSOTROS</a>
-                </li>
-                <li>
-                    <a class="men1" href="#section-contacto">CONTACTO</a>
-                </li>
-                <li>
-                    <a class="men1" href="https://registrarse-kohl.vercel.app/">REGISTRARSE</a>
-                </li>
-                <li>
-                    <a class="men1" href="https://loginint.vercel.app/">LOGIN</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <header x-data="{ open: false }" class="header">
+    <!-- Logo -->
+    <div class="header__logo">
+      <img src="/imagen/NUE/milog.png" alt="">
+    </div>
+    <!-- Boton abrir -->
+   
+    <button type="button" class="btn btn-dark header__button-nav--open "x-on:click="open = true" >☰</button>
+    <!-- Navegador -->
+    <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
+      <!-- Boton cerrar -->
+      <div class="nav__button" x-on:click="open = false">
+        <button class="btn btn-dark header__button-nav--close">X</button>
+        
+      </div>
+      <!-- Menu -->
+      <ul class="nav__ul">
+        <li class="nav__item"><a href="#container-portada" class="nav__link">HOME</a></li>
+        <li class="nav__item"><a href="#container-section1" class="nav__link">SERVICIOS</a></li>
+        <li class="nav__item"><a href="#container-section2" class="nav__link">PROYECTOS</a></li>
+        <li class="nav__item"><a href="#container-section3" class="nav__link">NOSOTROS</a></li>
+        <li class="nav__item"><a href="#section-contacto" class="nav__link">CONTACTO</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">REGISTRARSE</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">LOGIN</a></li>
+      </ul>
+    </nav>
+    <!-- Fin Navegador -->
+  </header>
     <main>
 
         <section class="container-portada">
-          
+          <div class="fondoback">
             <div class="info-per">
 
                 <h1>AGENCIA DIGITAL CON PASION EN MARKETING</h1>
@@ -75,7 +69,7 @@
               
 
             </div>
-
+          </div>
           
         </section>
 
@@ -136,7 +130,7 @@
 
 
         <section id="container-section2">
-            <h3 class="titulo2">ALGUNOS PROYECTOS</h3></div>
+            <h3 class="titulo4">ALGUNOS PROYECTOS</h3></div>
 
 
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -171,37 +165,22 @@
 
         <section id="container-section3">
 
-            <div class="impresen">
-                <div class="presen">
-                    <img src="/imagen/NUE/present.png" class="imcard" alt="...">
-                   
-                </div>
-
-            <div class="conletras"> 
-                <div class="cotitulo">
-                   <p class="noso">ACERCA DE NOSOTROS</p>
-                 <h3 class="tit5">SU EMPRESA EN MANOS SEGURAS</h3></div>
-              
-                <div class="tex2x"><p>Martin Office es una agencia digital
-                     y nuestro objetivo es ayudar a tu empresas
-                      a escalar en todo lo digital y potenciar tus ventas teniendo un
-                       buen sitio web, contenido creativo para videos, blog y redes sociales y en la gestión de campañas de marketing digital.</p></div>
+            
                 
-         </div>
-
+                    <img src="/imagen/NUE/present.png" class="hearbeat" alt="...">
 
             
-               
-            
-
-              
-            </div>
-         
-
-            </div>
-
-
-          
+          <div class="conletras">
+               <div class="cotitulo">
+                <p class="noso">ACERCA DE NOSOTROS</p>
+              <h3 class="tit5">SU EMPRESA EN MANOS SEGURAS</h3></div>
+           
+             <div class="tex2x"><p>Martin Office es una agencia digital
+                  y nuestro objetivo es ayudar a tu empresas
+                   a escalar en todo lo digital y potenciar tus ventas teniendo un
+                    buen sitio web, contenido creativo para videos, blog y redes 
+                    sociales y en la gestión de campañas de marketing digital.</p></div>
+                
         </section>
 
 

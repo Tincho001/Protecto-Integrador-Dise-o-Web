@@ -1,3 +1,5 @@
+
+
 html{ background-color: black;}
 
 body {
@@ -7,7 +9,10 @@ body {
   /*background-image: url(/imagenes/mart11111.jpg);
   background-size:contain;
   margin: 0%;*/
-  
+  background-image: url(/imagen/NUE/header_servicios.jpg);
+  background-attachment: fixed;
+ 
+   background-size: cover;
 
 }
 
@@ -15,128 +20,173 @@ img {
   width: 100%;
 
 }
+main {width: 100%;}
 
 /* HEADER-----------------------------------------------*/
 
-
-header {
-  background-color: #000000;
-  height: 100px;
-  position:sticky;
-  
-  opacity: 0.9;
-}
-#container-header{
-width: 100%;
-
-
+/* Estilos comunes */
+.header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
- 
-  font-family: 'Montserrat', sans-serif;
   position: fixed;
   z-index: 1000;
-  top:0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000000;
+  padding: 1rem;
+  opacity: 0.9;
   
 }
-.logo {
-  width: 150px;
-  height: 60px;
-  margin-left: 20px;
 
-}
-
-.change {
-  display: none;
-}
-
-
-li {margin: 10px;
-  list-style: none;
-  font-family: 'Barlow Condensed', 'sans-serif';
+li{  font-family: 'Barlow Condensed', 'sans-serif';
   font-weight: 300;
   text-transform: uppercase;
   transition: all .10s ease;
-  color: white;
-  display: inline-block;
-  list-style: none;
-  margin: 0px 10px;
-}
+  color: white;}
+  a {
+    text-decoration: none;
+    text-decoration-color: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size .3s;
+    color: white;
+    font-size: 1.25em;
+    display: inline-block;
+    text-align: center;
+    
+    }  
+    a:hover, a:focus {
+      color: white;
+      background-size: 100% 1px;
+  }
 
-a {
-  text-decoration: none;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 1px;
-  transition: background-size .3s;
-  color: white;
-  font-size: 20px;
-  display: inline-block;
-  text-align: center;
-  }  
-  a:hover, a:focus {
-    background-size: 100% 1px;
-}
-
-
-ul{
   
+.header__logo {
+  width: 6em;
+  height: 5em;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 30px;
-}
-
-nav {
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.icon-menu{
-  color: white;
-  font-size: 40px;
-  display: none!important;
 }
 
 
 
 
-#container-nav {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+/* Estilos móvil/celular */
+@media all and (max-width: 700px) {
+
+  /* Oculta el nav en la parte izquiera */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+   
+    bottom: 0;
+    background: rgb(12, 12, 12);
+    transform: translateX(-100vw);
+    transition: 0.5s;
+  }
+
+  /* Muestra el nav */
+  .nav--show {
+    transform: translateX(0);
+  }
+
+  .nav__button {
+    text-align: right;
+    margin: 1rem;
+  }
+
+  .nav__ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav__link {
+    display: block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+}
+
+/* Estilos Escritorio */
+@media all and (min-width: 701px) {
+
+  /* Oculta botón de abrir o cerrar */
+  .nav__button,
+  .header__button-nav--open {
+  
+    display: none ;
+  }
+
+  /* Adapta el nav en horizontal */
+  .nav__ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  .nav__link {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+  }
+
+  .nav__link:hover {
+    opacity: 0.5;
+  }
 }
 
 
-.nav-anchor {
-  font-size: 18px;
-}
+/*SECCION PORTADA-------------------------------------------*/
+
+
 
 
 
 /*----reg-----*/
 
-
+.text-center {
+  
+}
 
 
 .container {
-  background-image: url(/imagen/NUE/header_servicios.jpg);
- background-attachment: fixed;
 
-  background-size: cover;
 }
 .card {
-  margin-top: 80px;
+  margin-top: 101px;
   opacity: 0.8;
 }
 
@@ -144,8 +194,48 @@ nav {
 
 }
 .fw-bold {font-family: 'Barlow Condensed', sans-serif;
-  font-size: 50px;
+  font-size: 7vw;
   font-weight: 500 }
+
+
+
+
+
+
+
+
+/*SECCION UNO----------------------------------------*/
+
+
+
+
+
+
+/*SECCION DOS-------------------------------------*/
+
+
+
+
+
+
+
+
+/*----------------------------SECCION 3 NOSOTROS-------------*/
+
+
+
+
+
+
+
+
+/*---------------CONTACTO----------------------------*/
+
+
+
+
+
+
 
 
 
@@ -154,7 +244,6 @@ nav {
 
 footer {
   background-image: url(/imagen/NUE/fondofooter.png);
-  
 }
 
 .columnalink {display: flex;
@@ -162,7 +251,6 @@ flex-direction: column;
 justify-content: center;
 width: 100%;
 height: 40%;
-margin-top: 50px;
 }
 .list-unstyled {
   flex-direction: column;
@@ -172,65 +260,55 @@ margin-top: 50px;
 
 
 
-/*RESPONSIVE--------------------------------------------*/
+/*RESPONSIVE-----probar 359px en responsive celular---------------------------------------*/
 
 
-@media (max-width: 750px){
-  ul {
-      display: none;
-  }
-  li{
-      width: 100%;
-      text-align: center;
-  }
+@media (max-width: 1200px){
 
-  .icon-menu {
-      display: inline-block!important;
-  }
+
+
+
+
+
+
+
+
+/*------------------------------port------*/
+
+
+h1 {
+  font-family: 'Barlow Condensed', 'sans-serif';
+  width: 40vh;
+ font-weight: 300;
   
-  .change:checked ~ ul {
-      display: inline-block!important;
-  }
-
-  .container-section1 {
-    
-    flex-direction: column;
-  }
-
-.parrafo-1 { font-size: 20px;}
-
-.bot-1 {flex-wrap: wrap;}
-
-#container-section3 {
-  flex-direction: column;
 }
 
-.icons-im {flex-direction: column;
+  
+  
+
+
+
+
+
+
+/*----------section imagenes------*/
+
+
+
+
+/*--------------section3--------*/
+
+
+/*-------------setion contacto--------*/
+
+
+/*------footer----------*/
+
+footer {
+ height: 15em;
 }
-
-#container-section4 {flex-direction: column;
-align-items: none;}
-
-.contenedor-imagenes {flex-direction: column;
-  flex-wrap: wrap;
-align-items: center;}
-
-h4 { text-align: center;}
-
-.card {
-  width: none;
+.columnalink {
+  display: none!important;
 }
-
-
-.contim {flex-direction: column;
-  flex-wrap: wrap;
-align-items: center;}
-
-
-h3 { text-align: center;}
-
-
-
-
-}
-
+.mb-4 {
+  font-size: 0.7em;}}
